@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<b>Javascript Object Constructors</b><p id="person"></p>
+<b>Arrow Functions</b><p id="demo"></p>
+<script>
+
+function Person(name, age, gender, height) {
+this.Name = name;
+this.Age = age;
+this.gender = gender;
+this.Height = height;
+}
+const per = new Person("Shreyansh", "20", "Male", "5'11");
+document.getElementById("person").innerHTML =
+"Gender: "+per.gender+ "<br>"+
+"My name is " + per.Name + ". I am " +per.Age+ " years old. "+
+" My height is "+per.Height+".";
+
+var person;
+person = (gender, name, age, height) => "Gender: " + gender +
+"<br>"+"My name is " +name + ". I am " +age+ " years old. "+
+" My height is "+height+"."
+document.getElementById("demo").innerHTML = person("Male", "Shreyansh",
+"20","5'11");
+</script>
+</body>
+</html

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+</head>
+<body>
+<h2>Inheritance</h2>
+<label for="name">Name: </label><br />
+<input type="text" id="1" name="name" value="" /><br />
+<label for="number">Roll number: </label><br />
+<input type="text" id="2" name="rollno" /><br /><br />
+<button type="submit" onclick="return checkError()">Submit</button>
+
+</body>
+<script>
+class Person {
+constructor(name) {
+this.name = name;
+}
+override() {
+alert(`Hi, I am ${this.name}`);
+}
+}
+class Student extends Person {
+constructor(name, rollno) {
+super(name);
+this.rollNo = rollno;
+}
+override() {
+super.override(); // call parent stop
+}
+}
+const obj = new Student("Shreyansh", 4);
+console.log("Output: ", obj);
+const checkError = () => {
+const value = document.getElementById("1").value;
+const value1 = document.getElementById("2").value;
+console.log(value);
+console.log(value1);
+obj.override();
+
+try {
+if(!value || value === "0") throw "Invalid Input";
+if(!value1 || value1 === "0") throw "Doesn't exist";
+}
+catch(err) {
+
+message.innerHTML = "Input " + err;
+}
+};
+</script>
